@@ -6,6 +6,12 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 
 const RegistrationScreen = ({navigation})=>{
+    const[input,setInput] = React.useState({
+        email:'',
+        fullname:'',
+        password:'',
+        phone:''
+    })
     const validate = ()=>{}
     return (
     <SafeAreaView style={{ backgroundColor:COLORS.white,flex:1 }}>
@@ -13,7 +19,7 @@ const RegistrationScreen = ({navigation})=>{
                 <Text style={{ color:COLORS.black,fontSize:40,fontWeight:'bold' }}>Register</Text>
                 <Text style={{ color:COLORS.grey,fontSize:18,marginVertical:10 }}>Enter Your Details to Register</Text>
                 <View style={{ marginVertical:20 }}>
-                <Input 
+                <Input
                  placeholder="Enter your fullname" iconName="account-outline" 
                  label="Full name"
                 />
@@ -22,12 +28,13 @@ const RegistrationScreen = ({navigation})=>{
                  label="Email"
                 />
                 <Input 
+                 keyboardType="numeric"
                  placeholder="Enter your phone number" iconName="phone-outline" 
                  label="Phone Number"
                 />
                 
                   <Input 
-                  password
+                 password
                  placeholder="Enter your password" iconName="lock-outline" 
                  label="Password"
                 />
