@@ -12,7 +12,11 @@ const RegistrationScreen = ({navigation})=>{
         password:'',
         phone:''
     })
-    const validate = ()=>{}
+    const validate = ()=>{
+         if(!input.email){
+     
+         }
+    }
     return (
     <SafeAreaView style={{ backgroundColor:COLORS.white,flex:1 }}>
             <ScrollView contentContainerStyle={{ paddingTop:50,paddingHorizontal:20 }}>

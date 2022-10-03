@@ -7,7 +7,6 @@ import RegistrationScreen from './src/views/screens/RegistrationScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createStackNavigator();
-
 const App = () =>{
   return (
     <NavigationContainer>
