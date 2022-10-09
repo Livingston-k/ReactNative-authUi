@@ -42,11 +42,11 @@ const LoginScreen = ({navigation})=>{
         setLoading(true)
         setTimeout( async () => {
             let userData = await AsyncStorage.getItem('user')
+            setLoading(false)
             if (userData){
-     
                let userData = JSON.parse(userData)
                 if (input.email == userData.email && input.password == userData.password){
-                    AsyncStorage.setItem("user", { ...userData,loggedIn:true })
+                    AsyncStorage.setItem('user', JSON.stringify( { ...userData,loggedIn:true }))
                     navigation.navigate("HomeScreen")
                 }else{
                     setLoading(false)
@@ -76,8 +76,7 @@ const LoginScreen = ({navigation})=>{
                         }}
                         onChangeText={(text) => handleOnChange(text, 'email')}
                     />
-                  
-
+                
                     <Input
                         password
                         placeholder="Enter your password" iconName="lock-outline"
